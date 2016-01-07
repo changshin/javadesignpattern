@@ -4,7 +4,7 @@ public class VolatileSingleton {
 
 	private static volatile VolatileSingleton _instance; //volatile variable
 
-	
+	// test
 	public static VolatileSingleton getInstance(){
 
 	   if(_instance == null){
