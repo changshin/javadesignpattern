@@ -19,7 +19,7 @@ class LogitechRemoteControl extends AbstractRemoteControl {
 		System.out.println("Logitech use keyword to set channel.");
 	}
 }
-abstract class AbstractRemoteControl {
+ class AbstractRemoteControl {
 	/**
 	 * @uml.property  name="tv"
 	 * @uml.associationEnd  

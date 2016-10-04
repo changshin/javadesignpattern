@@ -28,7 +28,7 @@ public class Buyer {
 			Product p = (Product) cart.get(index);
 			sum += p.getPrice();
 			cartList += (index == 0) ? "" + p.toString() : ", " + p.toString();
-			System.out.println(p + "'s price is "+p.getPrice() + ""+ p.getPrice());
+			System.out.println(p + "'s price is "+p.getPrice() );
 		}
 
 		System.out.println("Summary " + sum + ".");
