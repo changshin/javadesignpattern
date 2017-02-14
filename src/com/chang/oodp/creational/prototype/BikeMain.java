@@ -11,8 +11,8 @@ public class BikeMain {
 		Bike basicBike = bike.clone();
 		System.out.println("bike: "	+ bike.getModel());
 		System.out.println("basicBike: " + basicBike.getModel());
-		BikeMain workShop = new BikeMain();
-		Bike advancedBike = workShop.makeJaguar(basicBike);
+		BikeMain bikeMain = new BikeMain();
+		Bike advancedBike = bikeMain.makeJaguar(basicBike);
 		System.out.println("bike: "	+ bike.getModel());
 		System.out.println("basicBike: " + basicBike.getModel());
 		//System.out.println("workShop: " + workShop.getModel());

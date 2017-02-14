@@ -48,7 +48,7 @@ public class ATMDispenseChainMain {
 			atmDispenser.c50.dispense(new Currency(amount));
 			
 			System.out.println();
-			c50.dispense(new Currency(amount));
+			//c50.dispense(new Currency(amount));
 		}
 
 	}

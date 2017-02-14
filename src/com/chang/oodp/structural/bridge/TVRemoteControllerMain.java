@@ -8,25 +8,24 @@ public class TVRemoteControllerMain {
 	}
 }
 
-class LogitechRemoteControl extends AbstractRemoteControl {
+class LogitechRemoteControl extends RemoteControl {
 	 
 	public LogitechRemoteControl(TV tv) {
 		super(tv);
 	}
- 
+	
 	public void setChannelKeyboard(int channel){
 		setChannel(channel);
 		System.out.println("Logitech use keyword to set channel.");
 	}
 }
- class AbstractRemoteControl {
-	/**
-	 * @uml.property  name="tv"
-	 * @uml.associationEnd  
-	 */
+
+// generic remote controll
+class RemoteControl {
+	
 	private TV tv;
  
-	public AbstractRemoteControl(TV tv){
+	public RemoteControl(TV tv){
 		this.tv = tv;
 	}
  
@@ -37,8 +36,9 @@ class LogitechRemoteControl extends AbstractRemoteControl {
 	public void turnOff(){
 		tv.off();
 	}
- 
+	
 	public void setChannel(int channel){
+		System.out.println("AbstractRemoteControl, setChannel() is called.");
 		tv.switchChannel(channel);
 	}
 }

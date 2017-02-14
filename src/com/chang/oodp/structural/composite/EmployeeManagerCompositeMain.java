@@ -14,6 +14,7 @@ public class EmployeeManagerCompositeMain {
 		Employee manager1 = new Manager("Daniel", 25000);
 		manager1.add(emp1);
 		manager1.add(emp2);
+		manager1.print();
 		Employee emp3 = new Developer("Michael", 20000);
 		Manager generalManager = new Manager("Mark", 50000);
 		generalManager.add(emp3);
@@ -61,10 +62,7 @@ class Developer implements Employee {
 	}
 
 	public void print() {
-		System.out.println("-------------");
-		System.out.println("Name =" + getName());
-		System.out.println("Salary =" + getSalary());
-		System.out.println("-------------");
+		System.out.println("   Name = " + getName() + "\tSalary = " + getSalary());
 	}
 
 	public void remove(Employee employee) {
@@ -103,10 +101,7 @@ class Manager implements Employee {
 	}
 
 	public void print() {
-		System.out.println("-------------");
-		System.out.println("Manager Name =" + getName());
-		System.out.println("Salary =" + getSalary());
-		System.out.println("-------------");
+		System.out.println("Manager Name =" + getName() + "\tSalary =" + getSalary());
 
 		Iterator<Employee> employeeIterator = employees.iterator();
 		while (employeeIterator.hasNext()) {

@@ -66,8 +66,7 @@ class Computer {
 			this.RAM = ram;
 		}
 
-		public ComputerBuilder setGraphicsCardEnabled(
-				boolean isGraphicsCardEnabled) {
+		public ComputerBuilder setGraphicsCardEnabled(boolean isGraphicsCardEnabled) {
 			this.isGraphicsCardEnabled = isGraphicsCardEnabled;
 			return this;
 		}

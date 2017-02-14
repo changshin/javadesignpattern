@@ -54,7 +54,7 @@ class Item {
 		try {
 			// use default object clone.
 			clonedItem = (Item) super.clone();
-			// specialised clone
+			// specialized clone
 			clonedItem.setPrice(price);
 			clonedItem.setTitle(title);
 		} catch (CloneNotSupportedException e) {

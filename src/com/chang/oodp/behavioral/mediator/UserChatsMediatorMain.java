@@ -60,12 +60,12 @@ class UserImpl extends User {
     }
  
     @Override
-    public void send(String msg){
+    public void send(String msg){	// going to use one time to send
         //System.out.println(this.name+": Sending Message="+msg);
     	chatMediator.sendMessage(this,msg);
     }
     @Override
-    public void receive(String msg) {
+    public void receive(String msg) {	// receiving many user
         System.out.println(this.name+": Received Message:"+msg);
     }
 
@@ -76,8 +76,8 @@ abstract class User {
     protected String name;
      
     public User(ChatMediator chatMediator, String name){
-        this.chatMediator=chatMediator;
-        this.name=name;
+        this.chatMediator = chatMediator;
+        this.name = name;
     }
      
     public abstract void send(String msg);

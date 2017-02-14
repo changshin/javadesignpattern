@@ -10,8 +10,8 @@ public class ThingProxyMain {
 
 		FastThing fastThing = new FastThing();
 		fastThing.sayHello();
-
 		proxy.sayHello();
+
 
 	}
 }
@@ -32,11 +32,6 @@ class Proxy {
 
 }
 
-abstract class Thing {
-	public void sayHello() {
-		System.out.println(this.getClass().getSimpleName() + " says howdy at " + new Date());
-	}
-}
 
 class FastThing extends Thing {
 	public FastThing() {
@@ -51,5 +46,11 @@ class SlowThing extends Thing {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+	}
+}
+
+abstract class Thing {
+	public void sayHello() {
+		System.out.println(this.getClass().getSimpleName() + " says howdy at " + new Date());
 	}
 }

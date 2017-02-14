@@ -1,6 +1,6 @@
 package com.chang.oodp.structural.adapter;
 
-//구모델 인터페이스
+//Old toy interface
 interface OldToy {
 	public void use();
 
@@ -9,7 +9,7 @@ interface OldToy {
 	public String getName();
 }
 
-// 구모델 장난감
+// Old toy
 class OldToyImpl implements OldToy {
 	private String myName = "";
 

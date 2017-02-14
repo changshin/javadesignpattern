@@ -21,12 +21,10 @@ public class LoggerChainMain {
 		loggerChain.logMessage(AbstractLogger.INFO, "This is an information.");
 
 		System.out.println("DEBUG Logger===");
-		loggerChain.logMessage(AbstractLogger.DEBUG,
-				"This is an debug level information.");
+		loggerChain.logMessage(AbstractLogger.DEBUG,"This is an debug level information.");
 
 		System.out.println("ERROR Logger===");
-		loggerChain.logMessage(AbstractLogger.ERROR,
-				"This is an error information.");
+		loggerChain.logMessage(AbstractLogger.ERROR,"This is an error information.");
 	}
 }
 
@@ -38,7 +36,7 @@ class DebugLogger extends AbstractLogger {
 
 	@Override
 	protected void write(String message) {
-		System.out.println("Debug::Logger: " + message);
+		System.out.println("Debug::Logger: " + this.level + " " + message);
 	}
 }
 
@@ -50,7 +48,7 @@ class ErrorLogger extends AbstractLogger {
 
 	@Override
 	protected void write(String message) {
-		System.out.println("Error::Logger: " + message);
+		System.out.println("Error::Logger: " + this.level + " " + message);
 	}
 }
 
@@ -62,14 +60,14 @@ class InfoLogger extends AbstractLogger {
 
 	@Override
 	protected void write(String message) {
-		System.out.println("Info::Logger: " + message);
+		System.out.println("Info::Logger: " + this.level + " " + message);
 	}
 }
 
 abstract class AbstractLogger {
-	public static int INFO = 1;		// Console
+	public static int INFO = 3;		// Console
 	public static int DEBUG = 2;	// file
-	public static int ERROR = 3;	// Error
+	public static int ERROR = 1;	// Error
 
 	protected int level;
 
@@ -81,8 +79,8 @@ abstract class AbstractLogger {
 	}
 
 	public void logMessage(int level, String message) {
-		//System.out.println(this.level + "," + level);
-		if (this.level <= level) {
+		System.out.println("logMessage."+this.level + "," + level);
+		if (this.level >= level) {
 			write(message);
 		} 
 		if (nextLogger != null) {
