@@ -24,10 +24,15 @@ public class Buyer {
 			return;
 		}
 
-		for (int index = 0; index < cart.size(); index++) {
-			Product p = (Product) cart.get(index);
+//		for (int index = 0; index < cart.size(); index++) {
+//			Product p = (Product) cart.get(index);
+//			sum += p.getPrice();
+//			cartList += (index == 0) ? "" + p.toString() : ", " + p.toString();
+//			System.out.println(p + "'s price is "+p.getPrice() );
+//		}
+		for (Product p: cart) {
 			sum += p.getPrice();
-			cartList += (index == 0) ? "" + p.toString() : ", " + p.toString();
+			cartList += cartList =="" ?  p.toString() : ", " + p.toString();
 			System.out.println(p + "'s price is "+p.getPrice() );
 		}
 

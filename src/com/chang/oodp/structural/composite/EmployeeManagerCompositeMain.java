@@ -53,6 +53,10 @@ class Developer implements Employee {
 		return null;
 	}
 
+	public void remove(Employee employee) {
+		// this is leaf node so this method is not applicable to this class.
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -63,10 +67,6 @@ class Developer implements Employee {
 
 	public void print() {
 		System.out.println("   Name = " + getName() + "\tSalary = " + getSalary());
-	}
-
-	public void remove(Employee employee) {
-		// this is leaf node so this method is not applicable to this class.
 	}
 
 }

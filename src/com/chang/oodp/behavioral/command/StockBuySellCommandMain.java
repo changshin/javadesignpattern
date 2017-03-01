@@ -35,27 +35,28 @@ class Broker {
 	}
 }
 
-class SellStock implements Order {
-	private Stock abcStock;
 
-	public SellStock(Stock abcStock) {
-		this.abcStock = abcStock;
+class SellStock implements Order {
+	private Stock aStock;
+
+	public SellStock(Stock aStock) {
+		this.aStock = aStock;
 	}
 
 	public void execute() {
-		abcStock.sell();
+		aStock.sell();
 	}
 }
 
 class BuyStock implements Order {
-	private Stock abcStock;
+	private Stock aStock;
 
-	public BuyStock(Stock abcStock) {
-		this.abcStock = abcStock;
+	public BuyStock(Stock aStock) {
+		this.aStock = aStock;
 	}
 
 	public void execute() {
-		abcStock.buy();
+		aStock.buy();
 	}
 }
 interface Order {

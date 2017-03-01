@@ -2,7 +2,9 @@ package com.chang.oodp.behavioral.mediator;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+ * provide a mediator between objects for communication and help in implementing lose-coupling between objects.
+ */
 public class UserChatsMediatorMain {
     public static void main(String[] args) {
         ChatMediator chatMediator = new ChatMediatorImpl();

@@ -1,6 +1,6 @@
 package com.chang.oodp.behavioral.command;
 
-public class FileSystemClient {
+public class FileSystemClientMain {
 	public static void main(String[] args) {
         //Creating the receiver object
         FileSystemReceiver fs = FileSystemReceiverUtil.getUnderlyingFileSystem();
