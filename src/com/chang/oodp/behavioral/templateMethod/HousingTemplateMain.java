@@ -1,17 +1,22 @@
 package com.chang.oodp.behavioral.templateMethod;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HousingTemplateMain {
 	public static void main(String[] args) {
 
-		HouseTemplate houseType = new WoodenHouse();
+		HouseTemplate woodHouse = new WoodenHouse();
+		//woodHouse.buildHouse();
+		HouseTemplate glassHouse = new GlassHouse();
+		//glassHouse.buildHouse();
 
-		// using template method
-		houseType.buildHouse();
-		System.out.println("************");
-
-		houseType = new GlassHouse();
-
-		houseType.buildHouse();
+		List<HouseTemplate> houses = new ArrayList<HouseTemplate>();
+		houses.add(woodHouse);
+		houses.add(glassHouse);
+		for ( HouseTemplate houseTemplate: houses ) {
+			houseTemplate.buildHouse();
+		}
 	}
 
 }
@@ -19,12 +24,12 @@ public class HousingTemplateMain {
 class WoodenHouse extends HouseTemplate {
 	@Override
 	public void buildWalls() {
-		System.out.println("Building glass Walls");
+		System.out.println("Building Wooden Walls");
 	}
 
 	@Override
 	public void buildPillars() {
-		System.out.println("Building Pillars with glass coating");
+		System.out.println("Building Pillars with wood coating");
 	}
 
 }
@@ -32,12 +37,12 @@ class WoodenHouse extends HouseTemplate {
 class GlassHouse extends HouseTemplate {
 	//@Override
 	public void buildWalls() {
-		System.out.println("Building Wooden Walls");
+		System.out.println("Building glass Walls");
 	}
 
 	//@Override
 	public void buildPillars() {
-		System.out.println("Building Pillars with Wood coating");
+		System.out.println("Building Pillars with glass coating");
 	}
 
 }

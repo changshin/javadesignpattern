@@ -16,7 +16,7 @@ class LogitechRemoteControl extends RemoteControl {
 	
 	public void setChannelKeyboard(int channel){
 		setChannel(channel);
-		System.out.println("Logitech use keyword to set channel.");
+		System.out.println("Logitech use keyboard to set channel.");
 	}
 }
 

@@ -43,7 +43,7 @@ class Computer {
 		return isBluetoothEnabled;
 	}
 
-	private Computer(ComputerBuilder builder) {
+	private Computer( ComputerBuilder builder ) {
 		this.HDD = builder.HDD;
 		this.RAM = builder.RAM;
 		this.isGraphicsCardEnabled = builder.isGraphicsCardEnabled;

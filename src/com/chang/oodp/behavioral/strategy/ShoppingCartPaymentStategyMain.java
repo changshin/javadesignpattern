@@ -14,10 +14,10 @@ public class ShoppingCartPaymentStategyMain {
 		cart.addItem(item2);
 
 		// pay by paypal
-		cart.pay(new PaypalStrategy("myemail@example.com", "mypwd"));
+		cart.pay(new PaypalStrategy("email@email.com", "password"));
 
 		// pay by credit card
-		cart.pay(new CreditCardStrategy("Pankaj Kumar", "1234567890123456",	"786", "12/15"));
+		cart.pay(new CreditCardStrategy("fisrt last", "1234567890123456",	"786", "12/17"));
 	}
 
 }
@@ -66,7 +66,6 @@ interface PaymentStrategy {
 
 class ShoppingCart {
 
-	// List of items
 	List<Item> items;
 
 	public ShoppingCart() {

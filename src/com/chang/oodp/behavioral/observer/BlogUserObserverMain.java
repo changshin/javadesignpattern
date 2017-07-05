@@ -12,7 +12,7 @@ public class BlogUserObserverMain {
 	public static void main(String args[]) {
 		BlogImpl blog = new BlogImpl();
 		User user1 = new User("user Chang");
-		User user2 = new User("user Shin");
+		User user2 = new User("user Jeffrey");
 		
 		//blog.registerObserver(user1);
 		//blog.registerObserver(user2);
@@ -22,9 +22,10 @@ public class BlogUserObserverMain {
 		List<Observer> observers = new ArrayList<Observer>();
 		observers.add(user1);
 		observers.add(user2);
+		String article = "No Aricale";
 		for ( Observer observer: observers ) {
 			blog.registerObserver(observer);
-			observer.setBlog(blog);
+			observer.setBlog(blog,article);	// interface
 		}
 		
 		System.out.println("======"+user1.getArticle());		
@@ -60,16 +61,14 @@ class BlogImpl implements Blog {
 
 		if (stateChange) {
 			for (Observer observer : observersList) {
-				observer.update();
+				observer.update();	// interface
 			}
 		}
 	}
 
 	public Object getUpdate() {
 		Object changedState = null;
-		// should have logic to send the
-		// state change to querying observer
-		//System.out.println("======getUpdate() is called="+stateChange);
+		// should have logic to send the state change to querying observer
 		if (stateChange) {
 			changedState = "changed new Article Design Pattern";
 		}
@@ -78,16 +77,15 @@ class BlogImpl implements Blog {
 
 	public void postNewArticle() {
 		stateChange = true;
-		//System.out.println("======postNewArticle() is called="+stateChange);
 		notifyObserver();
 	}
 
 }
 
 interface Blog {
-	public void registerObserver(Observer observer);
-	public void unRegisterObserver(Observer observer);
-	public void notifyObserver();
+//	public void registerObserver(Observer observer);
+//	public void unRegisterObserver(Observer observer);
+//	public void notifyObserver();
 	public Object getUpdate();
 }
 
@@ -102,17 +100,16 @@ class User implements Observer {
 	}
 	
 	@Override
-	public void setBlog(Blog blog) {
+	public void setBlog(Blog blog,String article) {
 		this.blog = blog;
-		article = "No New Article!";	// default value
+		this.article =article;	// default value
 	}
 
-	@Override
+	//@Override
 	public void update() {
 		//System.out.println(name + ",State change reported by Subject.");
-		System.out.println(name + ",update is called.");
 		article = (String) blog.getUpdate();
-		System.out.println(name + ",article="+ article);
+		//System.out.println(name + ",article="+ article);
 	}
 
 	public String getArticle() {
@@ -122,6 +119,6 @@ class User implements Observer {
 
 interface Observer {
 	public void update();
-	public void setBlog(Blog blog);
+	public void setBlog(Blog blog,String article);
 }
 
