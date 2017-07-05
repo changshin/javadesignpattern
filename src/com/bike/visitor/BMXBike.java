@@ -1,7 +1,7 @@
 package com.bike.visitor;
 
 public class BMXBike implements Item {
-	 
+	// test
     private int price;
     private String name;
      
